@@ -20,8 +20,8 @@ class Filter extends React.Component {
 }
 
 Filter.propTypes = {
-    filter: PropTypes.string.isRequired,
-    filterChange: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  filterChange: PropTypes.func.isRequired,
 }
 
 export default Filter;

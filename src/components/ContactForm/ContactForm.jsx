@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import s from './ContactForm.module.css'
 
 class ContactForm extends React.Component{
-    state = {
+  state = {
     name: '',
     number: '',
-    };
-    
-    formSubmit = event => {
+  };
+  
+  formSubmit = event => {
     event.preventDefault()
     this.props.onSubmit(this.state)
     this.resetForm()
@@ -16,12 +16,11 @@ class ContactForm extends React.Component{
 
   inputChange = event => {
     this.setState({[event.currentTarget.name]: event.currentTarget.value,});
-    };
-    
-    resetForm = () => {
-        this.setState({name: '',
-    number: '',})
-    }
+  };
+  
+  resetForm = () => {
+    this.setState({ name: '', number: '', })
+  }
   
 render(){
   return (
