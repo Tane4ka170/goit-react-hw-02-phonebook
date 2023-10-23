@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from 'prop-types'
-import s from './Filter.module.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import s from './Filter.module.css';
 
 class Filter extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class Filter extends React.Component {
           type="text"
           name="filter"
           value={this.props.filter}
-          onChange={(e) => this.props.filterChange(e.target.value)}
+          onChange={event => this.props.filterChange(event.target.value)}
         />
       </>
     );
@@ -22,6 +22,6 @@ class Filter extends React.Component {
 Filter.propTypes = {
   filter: PropTypes.string.isRequired,
   filterChange: PropTypes.func.isRequired,
-}
+};
 
 export default Filter;

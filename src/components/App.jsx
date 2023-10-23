@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
-import { nanoid } from "nanoid";
-import s from './App.module.css'
+import { nanoid } from 'nanoid';
+import s from './App.module.css';
 
 class App extends React.Component {
   state = {
@@ -14,10 +14,8 @@ class App extends React.Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: ''
-  }
-  
+  };
+
   handleAddContact = newContact => {
     this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact],
@@ -47,11 +45,11 @@ class App extends React.Component {
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
   };
-  
+
   filterContacts = filter => {
     this.setState({ filter });
   };
-  
+
   render() {
     const { contacts, filter } = this.state;
     const filteredContacts = contacts.filter(
@@ -60,9 +58,8 @@ class App extends React.Component {
         contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-
-      return (
-        <div className={s.div}>
+    return (
+      <div className={s.div}>
         <h1 className={s.title}>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         <h2 className={s.title}>Contacts</h2>
@@ -74,8 +71,8 @@ class App extends React.Component {
           filteredName={filter}
         />
       </div>
-      );
-    }
+    );
+  }
 }
 
 export default App;
